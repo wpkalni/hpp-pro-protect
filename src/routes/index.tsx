@@ -5,13 +5,14 @@ import {
   Clock,
   UserCheck,
   Smartphone,
-  Headphones,
   TrendingUp,
   DollarSign,
-  XCircle,
   Wrench,
   Home,
-  Calendar,
+  Repeat,
+  Award,
+  
+  HandshakeIcon,
   ChevronDown,
   ArrowRight,
   Check,
@@ -27,20 +28,23 @@ import {
   PackageCheck,
   FileCheck2,
   Zap,
+  MousePointerClick,
+  Sliders,
+  Briefcase,
 } from "lucide-react";
 import logo from "@/assets/hpp-logo.png";
-import heroHvac from "@/assets/hero-hvac.jpg";
+import heroContractor from "@/assets/hero-contractor.jpg";
 import contractor from "@/assets/contractor.jpg";
 import family from "@/assets/family.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "HPP HVAC Protection Plus — Coverage for New & Used HVAC Systems" },
+      { title: "HPP HVAC Protection Plus — Add Revenue to Every HVAC Install" },
       {
         name: "description",
         content:
-          "Contractor-first HVAC protection programs with fast enrollment, mobile-ready tools, and coverage for new and used systems up to 10 years old.",
+          "HPP gives HVAC contractors a simple way to offer protection on new and used systems, enroll customers fast, and build long-term retention after the install.",
       },
       { property: "og:title", content: "HPP HVAC Protection Plus" },
       {
@@ -70,9 +74,9 @@ function Header() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
-        <a href="#" className="flex items-center gap-2">
-          <Logo className="h-11 w-auto" />
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-5 lg:h-20 lg:px-8">
+        <a href="#" className="flex shrink-0 items-center gap-2">
+          <Logo className="h-8 w-auto sm:h-9 lg:h-11" />
         </a>
         <nav className="hidden items-center gap-1 lg:flex">
           {navItems.map((item) => (
@@ -107,7 +111,7 @@ function Header() {
         </div>
         <button
           onClick={() => setOpen(!open)}
-          className="rounded-md p-2 lg:hidden"
+          className="shrink-0 rounded-md p-2 lg:hidden"
           aria-label="Menu"
         >
           <Menu className="h-6 w-6" />
@@ -147,37 +151,40 @@ function Hero() {
   return (
     <section className="relative overflow-hidden bg-navy text-navy-foreground">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_oklch(0.78_0.16_75_/_0.12),_transparent_60%)]" />
-      <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-2 lg:gap-8 lg:px-8 lg:py-24">
-        <div className="flex flex-col justify-center">
-          <span className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-medium uppercase tracking-wider text-gold">
-            <ShieldCheck className="h-3.5 w-3.5" /> National HVAC Protection Network
+      <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:py-16 lg:grid-cols-2 lg:gap-8 lg:px-8 lg:py-24">
+        <div className="flex flex-col justify-center text-center lg:text-left">
+          <span className="mx-auto mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-medium uppercase tracking-wider text-gold lg:mx-0">
+            <ShieldCheck className="h-3.5 w-3.5" /> Built for HVAC Contractors
           </span>
-          <h1 className="text-5xl font-bold leading-[1.05] sm:text-6xl lg:text-7xl">
-            Protection for{" "}
-            <span className="text-gold">New &amp; Used</span>{" "}
-            HVAC Systems.
+          <h1 className="text-4xl font-bold leading-[1.08] sm:text-5xl lg:text-6xl xl:text-7xl">
+            Help Homeowners Say Yes —{" "}
+            <span className="text-gold">and Add Revenue</span> to Every Install.
           </h1>
-          <p className="mt-6 max-w-lg text-lg text-white/75">
-            Contractor-first coverage with fast enrollment, mobile-ready tools, and
-            support for systems up to 10 years old.
+          <p className="mx-auto mt-6 max-w-xl text-base text-white/75 sm:text-lg lg:mx-0">
+            HPP gives HVAC contractors a simple way to offer protection on new and
+            used systems, enroll customers fast, and create long-term retention
+            after the install.
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
             <a
               href="#enroll"
-              className="inline-flex items-center justify-center gap-2 rounded-md bg-gold px-6 py-3.5 text-base font-semibold text-gold-foreground shadow-lg shadow-gold/20 transition-all hover:brightness-105"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gold px-6 py-3.5 text-base font-semibold text-gold-foreground shadow-lg shadow-gold/20 transition-all hover:brightness-105 sm:w-auto"
             >
-              Become a HPP Contractor <ArrowRight className="h-4 w-4" />
+              Become an HPP Contractor <ArrowRight className="h-4 w-4" />
             </a>
             <a
-              href="#"
-              className="inline-flex items-center justify-center gap-2 rounded-md border border-gold/60 px-6 py-3.5 text-base font-semibold text-navy-foreground transition-colors hover:bg-white/5"
+              href="#enroll"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-gold/60 px-6 py-3.5 text-base font-semibold text-navy-foreground transition-colors hover:bg-white/5 sm:w-auto"
             >
-              Request Pricing
+              Sell a Contract
             </a>
           </div>
-          <div className="mt-10 grid grid-cols-1 gap-5 border-t border-white/10 pt-8 sm:grid-cols-3">
+          <div className="mx-auto mt-10 grid w-full max-w-xl grid-cols-1 gap-5 border-t border-white/10 pt-8 sm:grid-cols-3 lg:mx-0">
             {trust.map((t) => (
-              <div key={t.label} className="flex items-start gap-3">
+              <div
+                key={t.label}
+                className="flex items-start justify-center gap-3 lg:justify-start"
+              >
                 <t.icon className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
                 <span className="text-sm font-medium leading-tight text-white/90">
                   {t.label}
@@ -189,8 +196,8 @@ function Hero() {
         <div className="relative">
           <div className="relative overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/10">
             <img
-              src={heroHvac}
-              alt="Premium HVAC system at a modern home"
+              src={heroContractor}
+              alt="Friendly HVAC business owner standing in front of his service van"
               className="h-full w-full object-cover"
               width={1280}
               height={1280}
@@ -200,7 +207,6 @@ function Hero() {
             <div className="flex items-start gap-3">
               <div className="rounded-lg bg-navy/5 p-2.5">
                 <ShieldCheck className="h-7 w-7 text-navy" strokeWidth={2.2} />
-                <div className="absolute -mt-3 ml-3.5 h-3 w-3 rounded-full bg-gold ring-2 ring-background" />
               </div>
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wide text-navy">
@@ -220,45 +226,43 @@ function Benefits() {
   const items = [
     {
       icon: DollarSign,
-      title: "Competitive Labor Rates",
-      desc: "Up to $300/hr labor reimbursement.",
+      title: "Add Revenue Per Install",
+      desc: "Earn on every job by attaching protection at the point of sale.",
     },
     {
-      icon: XCircle,
-      title: "No Red Tape",
-      desc: "No inspectors. No hoops. Just fast, simple enrollment.",
+      icon: Briefcase,
+      title: "Sell From the Field or Office",
+      desc: "Quote and enroll wherever the customer is — truck, kitchen table, or desk.",
     },
     {
-      icon: Headphones,
-      title: "Real Human Support",
-      desc: "Contractor support when you need it.",
+      icon: ShieldCheck,
+      title: "Protect New & Used Systems",
+      desc: "Coverage for new installs and used systems up to 10 years old.",
     },
     {
-      icon: Smartphone,
-      title: "Mobile First",
-      desc: "Enroll, manage, and get paid from anywhere.",
-    },
-    {
-      icon: TrendingUp,
-      title: "More Opportunities",
-      desc: "Offer protection on new installs and used systems up to 10 years old.",
+      icon: Repeat,
+      title: "Keep Customers Coming Back",
+      desc: "Build long-term retention with coverage that drives repeat business.",
     },
   ];
   return (
-    <section className="bg-background py-20 lg:py-28">
+    <section className="bg-background py-16 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-gold">
-            Built Different. Built for the Trade.
+            Built for Contractor Growth
           </p>
-          <h2 className="text-4xl font-bold text-navy lg:text-5xl">
-            Everything you need. None of what you don&apos;t.
+          <h2 className="text-3xl font-bold text-navy sm:text-4xl lg:text-5xl">
+            More revenue. More retention. Every install.
           </h2>
         </div>
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-12 grid gap-6 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {items.map((it) => (
-            <div key={it.title} className="text-center">
-              <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-navy shadow-[var(--shadow-card)]">
+            <div
+              key={it.title}
+              className="rounded-2xl border border-border bg-background p-6 text-center shadow-[var(--shadow-card)] transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-elev)]"
+            >
+              <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-navy">
                 <it.icon className="h-6 w-6 text-gold" strokeWidth={2.2} />
               </div>
               <h3 className="mb-2 text-base font-bold text-navy">{it.title}</h3>
@@ -273,41 +277,48 @@ function Benefits() {
 
 function EnrollmentFlow() {
   const steps = [
-    { n: 1, icon: PackageCheck, title: "Choose Program", desc: "Pick the protection plan that matches the job." },
-    { n: 2, icon: ScanLine, title: "Add Equipment", desc: "Smart Scan captures system details in seconds." },
+    { n: 1, icon: PackageCheck, title: "Choose Program", desc: "Pick the protection plan that fits the job." },
+    { n: 2, icon: ScanLine, title: "Add Equipment", desc: "Capture system details in seconds." },
     { n: 3, icon: FileCheck2, title: "Select Coverage", desc: "Tailor terms for new or used systems." },
     { n: 4, icon: Zap, title: "Activate Protection", desc: "Coverage is live the moment you confirm." },
   ];
+  const bullets = [
+    { icon: MousePointerClick, t: "Minimal clicks", d: "A short guided flow your team can run in seconds." },
+    { icon: Smartphone, t: "Mobile and desktop friendly", d: "Works on a phone in the driveway or a tablet at the desk." },
+    { icon: Sliders, t: "Dynamic pricing", d: "Quote real numbers in front of the customer, on the spot." },
+    { icon: Zap, t: "Fast customer enrollment", d: "Sign, register, and activate in a single sitting." },
+  ];
   return (
-    <section id="enroll" className="bg-navy-soft py-20 lg:py-28">
+    <section id="enroll" className="bg-navy-soft py-16 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-4">
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-navy/70">
-              For Contractors
-            </p>
-            <h2 className="text-4xl font-bold text-navy lg:text-5xl">
-              Power up your business with HPP.
-            </h2>
-            <div className="mt-8 space-y-5">
-              {[
-                ["Coverage that builds trust", "Give your customers confidence with industry-leading protection."],
-                ["Seamless process", "Enroll in minutes with our Smart Scan technology."],
-                ["Generate commissioned revenue", "Earn more on every job with our contractor-first program."],
-                ["Built for the field", "Designed by contractors, for contractors."],
-              ].map(([t, d]) => (
-                <div key={t} className="flex gap-3">
-                  <Check className="mt-1 h-5 w-5 shrink-0 text-gold" strokeWidth={3} />
-                  <div>
-                    <p className="font-semibold text-navy">{t}</p>
-                    <p className="text-sm text-muted-foreground">{d}</p>
-                  </div>
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-navy/70">
+            How Enrollment Works
+          </p>
+          <h2 className="text-3xl font-bold text-navy sm:text-4xl lg:text-5xl">
+            Sell Coverage in Minutes.
+          </h2>
+          <p className="mt-5 text-base text-muted-foreground sm:text-lg">
+            Contractors can quote, enroll, and register coverage from the field
+            or office with a simple guided flow.
+          </p>
+        </div>
+
+        <div className="mt-12 grid items-center gap-10 sm:mt-16 lg:grid-cols-12 lg:gap-12">
+          <div className="space-y-5 lg:col-span-4">
+            {bullets.map((b) => (
+              <div key={b.t} className="flex gap-4 rounded-xl bg-background p-5 shadow-[var(--shadow-card)]">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-navy">
+                  <b.icon className="h-5 w-5 text-gold" />
                 </div>
-              ))}
-            </div>
+                <div>
+                  <p className="font-semibold text-navy">{b.t}</p>
+                  <p className="text-sm text-muted-foreground">{b.d}</p>
+                </div>
+              </div>
+            ))}
           </div>
 
-          {/* Phone mockup */}
           <div className="flex justify-center lg:col-span-4">
             <PhoneMockup />
           </div>
@@ -316,13 +327,11 @@ function EnrollmentFlow() {
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-navy/70">
               Enrollment Flow
             </p>
-            <h3 className="text-3xl font-bold text-navy">
-              Smart Enrollment.
-              <br />
-              Instant Coverage.
+            <h3 className="text-2xl font-bold text-navy sm:text-3xl">
+              Quote. Enroll. Activate.
             </h3>
             <p className="mt-3 text-muted-foreground">
-              Scan equipment. Get coverage. In seconds.
+              A guided four-step flow your whole team can run.
             </p>
             <div className="mt-6 space-y-3">
               {steps.map((s) => (
@@ -350,41 +359,41 @@ function EnrollmentFlow() {
 
 function PhoneMockup() {
   return (
-    <div className="relative w-[280px]">
+    <div className="relative w-[260px] sm:w-[280px]">
       <div className="overflow-hidden rounded-[2.5rem] bg-navy p-2 shadow-2xl ring-1 ring-black/5">
         <div className="rounded-[2rem] bg-background p-5">
           <div className="mb-4 flex items-center justify-between">
             <Logo className="h-7" />
             <div className="h-7 w-7 rounded-full bg-navy-soft" />
           </div>
-          <p className="text-base font-bold text-navy">Good morning, John</p>
+          <p className="text-base font-bold text-navy">New Enrollment</p>
           <p className="mt-4 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-            New Enrollment
+            Quote &amp; Sell
           </p>
           <div className="mt-2 rounded-xl border border-border p-4">
             <div className="flex items-center gap-2">
               <ScanLine className="h-4 w-4 text-navy" />
-              <p className="text-sm font-semibold text-navy">Smart Scan</p>
+              <p className="text-sm font-semibold text-navy">Start a Quote</p>
             </div>
             <p className="mt-1 text-xs text-muted-foreground">
-              Scan equipment to start a new enrollment.
+              Add system details and pull live pricing.
             </p>
             <button className="mt-3 w-full rounded-lg bg-navy py-2.5 text-xs font-semibold text-navy-foreground">
-              Start Scan
+              Begin Enrollment
             </button>
           </div>
           <p className="mt-5 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-            Recent Enrollments
+            Recent Sales
           </p>
           <div className="mt-2 space-y-2 text-xs">
             {[
-              ["Smith Residence", "05/17/24"],
-              ["Johnson Home", "05/12/24"],
-              ["Williams Home", "05/09/24"],
+              ["Smith Residence", "Active"],
+              ["Johnson Home", "Active"],
+              ["Williams Home", "Active"],
             ].map(([n, d]) => (
               <div key={n} className="flex justify-between border-b border-border pb-2">
                 <span className="font-medium text-navy">{n}</span>
-                <span className="text-muted-foreground">{d}</span>
+                <span className="text-gold">{d}</span>
               </div>
             ))}
           </div>
@@ -396,19 +405,23 @@ function PhoneMockup() {
 
 function CoverageBanner() {
   const items = [
-    { icon: DollarSign, t: "Up to $300/hr", s: "Labor Reimbursement" },
-    { icon: Wrench, t: "Parts, Labor &", s: "Compressor Coverage" },
-    { icon: Home, t: "New & Used Systems", s: "Up to 10 Years Old" },
-    { icon: XCircle, t: "No Age Restrictions", s: "On Common Components*" },
-    { icon: Calendar, t: "Systems Up to", s: "10 Years Old" },
+    { icon: Home, t: "New & Used Systems", s: "Coverage up to 10 years old" },
+    { icon: Wrench, t: "Parts & Labor", s: "Including compressor coverage" },
+    { icon: ShieldCheck, t: "Flexible Terms", s: "Plans tailored to the job" },
+    { icon: TrendingUp, t: "Easy to Attach", s: "Offered at point of sale" },
   ];
   return (
-    <section className="bg-navy py-14 text-navy-foreground">
+    <section className="bg-navy py-14 text-navy-foreground sm:py-16">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <p className="mb-10 text-center text-xs font-bold uppercase tracking-[0.25em] text-gold">
-          Coverage That Works As Hard As You Do.
-        </p>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mx-auto mb-10 max-w-2xl text-center">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-gold">
+            Coverage Options
+          </p>
+          <h2 className="text-3xl font-bold sm:text-4xl">
+            Protection for new and used HVAC systems.
+          </h2>
+        </div>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((it) => (
             <div key={it.s} className="flex flex-col items-center text-center">
               <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-full ring-1 ring-gold/50">
@@ -420,7 +433,7 @@ function CoverageBanner() {
           ))}
         </div>
         <p className="mt-8 text-center text-[11px] text-white/50">
-          *Restrictions may apply. See contract for details.
+          Restrictions may apply. See contract for details.
         </p>
       </div>
     </section>
@@ -428,10 +441,16 @@ function CoverageBanner() {
 }
 
 function ContractorNetwork() {
+  const bullets = [
+    { icon: TrendingUp, t: "Create an easy upsell on installs" },
+    { icon: Repeat, t: "Build long-term customer retention" },
+    { icon: Award, t: "Differentiate from competitors" },
+    { icon: HandshakeIcon, t: "Give customers more confidence at close" },
+  ];
   return (
     <section className="bg-background">
       <div className="mx-auto grid max-w-7xl items-stretch lg:grid-cols-2">
-        <div className="relative min-h-[400px] lg:min-h-[560px]">
+        <div className="relative min-h-[300px] sm:min-h-[400px] lg:min-h-[560px]">
           <img
             src={contractor}
             alt="HPP contractor in front of service van"
@@ -442,44 +461,31 @@ function ContractorNetwork() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent" />
         </div>
-        <div className="flex flex-col justify-center bg-navy-soft px-6 py-16 lg:px-16">
+        <div className="flex flex-col justify-center bg-navy-soft px-6 py-14 sm:py-16 lg:px-16">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-navy/70">
-            Stronger Together.
+            For Contractors
           </p>
-          <h2 className="text-4xl font-bold text-navy lg:text-5xl">
-            Join the HPP Contractor Network.
+          <h2 className="text-3xl font-bold text-navy sm:text-4xl lg:text-5xl">
+            Turn Warranty Coverage Into a Contractor Growth Tool.
           </h2>
           <p className="mt-5 max-w-md text-muted-foreground">
-            Partner with a growing network of elite HVAC professionals and give your
-            customers the protection they deserve — while growing your business.
+            HPP isn&apos;t just protection — it&apos;s a sales lever. Use it to win
+            more bids, lift ticket averages, and keep customers loyal long after
+            the install is done.
           </p>
-          <div className="mt-7 space-y-3">
-            {[
-              "Increase close rates",
-              "Boost customer satisfaction",
-              "Get backed by a company that pays",
-            ].map((b) => (
-              <div key={b} className="flex items-center gap-3">
-                <Check className="h-5 w-5 text-gold" strokeWidth={3} />
-                <span className="font-medium text-navy">{b}</span>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 grid max-w-md grid-cols-3 gap-4 border-y border-border py-6">
-            {[
-              ["2,400+", "Contractors"],
-              ["48", "States Served"],
-              ["98%", "Claim Approval"],
-            ].map(([n, l]) => (
-              <div key={l}>
-                <p className="text-2xl font-bold text-navy">{n}</p>
-                <p className="text-xs text-muted-foreground">{l}</p>
+          <div className="mt-7 space-y-4">
+            {bullets.map((b) => (
+              <div key={b.t} className="flex items-center gap-3">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-navy">
+                  <b.icon className="h-4 w-4 text-gold" />
+                </div>
+                <span className="font-medium text-navy">{b.t}</span>
               </div>
             ))}
           </div>
           <a
             href="#enroll"
-            className="mt-8 inline-flex w-fit items-center gap-2 rounded-md bg-navy px-6 py-3.5 text-sm font-semibold text-navy-foreground transition-all hover:bg-navy/90"
+            className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-md bg-navy px-6 py-3.5 text-sm font-semibold text-navy-foreground transition-all hover:bg-navy/90 sm:w-fit"
           >
             Apply to Become a Contractor <ArrowRight className="h-4 w-4" />
           </a>
@@ -493,28 +499,28 @@ function Homeowner() {
   return (
     <section className="bg-navy-soft">
       <div className="mx-auto grid max-w-7xl items-stretch lg:grid-cols-2">
-        <div className="flex flex-col justify-center px-6 py-16 lg:px-16">
+        <div className="flex flex-col justify-center px-6 py-14 sm:py-16 lg:px-16">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-navy/70">
             For Homeowners
           </p>
-          <h2 className="text-4xl font-bold text-navy lg:text-5xl">
+          <h2 className="text-3xl font-bold text-navy sm:text-4xl lg:text-5xl">
             Real protection.
             <br />
             Real peace of mind.
           </h2>
           <p className="mt-5 max-w-md text-muted-foreground">
-            Whether your system is new or has a few years on it, HPP has you covered
-            with simple, comprehensive protection for new and used systems up to 10
-            years old.
+            Whether your system is brand new or has a few years on it, HPP offers
+            simple, dependable coverage so you&apos;re never caught off guard by
+            an unexpected repair.
           </p>
           <a
             href="#"
-            className="mt-7 inline-flex w-fit items-center gap-2 rounded-md bg-navy px-6 py-3.5 text-sm font-semibold text-navy-foreground transition-all hover:bg-navy/90"
+            className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-md bg-navy px-6 py-3.5 text-sm font-semibold text-navy-foreground transition-all hover:bg-navy/90 sm:w-fit"
           >
             Learn More for Homeowners <ArrowRight className="h-4 w-4" />
           </a>
         </div>
-        <div className="relative min-h-[360px] lg:min-h-[480px]">
+        <div className="relative min-h-[300px] sm:min-h-[360px] lg:min-h-[480px]">
           <img
             src={family}
             alt="Family at home enjoying HVAC protection"
@@ -532,16 +538,15 @@ function Homeowner() {
 function FAQ() {
   const faqs = [
     ["What does HPP cover?", "HPP covers parts, labor and compressor for qualifying new and used HVAC systems."],
-    ["How does the Smart Scan work?", "Scan equipment tags with the mobile app and we pre-fill enrollment in seconds."],
-    ["Can I offer HPP on every job?", "Yes — most new installs and used systems up to 10 years old are eligible."],
+    ["Can I offer HPP on every job?", "Most new installs and used systems up to 10 years old are eligible."],
     ["Do you cover older systems?", "Used systems up to 10 years old qualify for coverage."],
-    ["How do claims work?", "File from the field in the HPP app. Real humans review and approve quickly."],
-    ["How do I get paid?", "Direct deposit on approved claims, typically within days."],
+    ["How does enrollment work?", "Quote, enroll, and activate from the field or office in a short guided flow."],
+    ["How do claims work?", "File from the field in the HPP app. Real humans review and process claims quickly."],
     ["Are there any inspection fees?", "No — HPP does not require inspections to enroll."],
   ];
   const [openIdx, setOpenIdx] = useState<number | null>(0);
   return (
-    <section className="bg-background py-20 lg:py-28">
+    <section className="bg-background py-16 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
         <p className="mb-10 text-center text-xs font-bold uppercase tracking-[0.25em] text-gold">
           Frequently Asked Questions
@@ -581,28 +586,29 @@ function FAQ() {
 
 function FinalCTA() {
   return (
-    <section className="relative overflow-hidden bg-navy py-20 text-navy-foreground lg:py-28">
+    <section className="relative overflow-hidden bg-navy py-16 text-navy-foreground sm:py-20 lg:py-28">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_oklch(0.78_0.16_75_/_0.15),_transparent_70%)]" />
       <div className="relative mx-auto max-w-4xl px-5 text-center lg:px-8">
         <ShieldCheck className="mx-auto mb-6 h-12 w-12 text-gold" strokeWidth={1.8} />
-        <h2 className="text-4xl font-bold leading-tight lg:text-6xl">
+        <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-6xl">
           Grow your business.
           <br />
           <span className="text-gold">Backed by HPP.</span>
         </h2>
-        <p className="mx-auto mt-6 max-w-xl text-lg text-white/75">
-          Join thousands of contractors enrolling jobs in minutes — right from the field.
+        <p className="mx-auto mt-6 max-w-xl text-base text-white/75 sm:text-lg">
+          Add revenue to every install and keep customers coming back —
+          enroll jobs in minutes from anywhere.
         </p>
-        <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="mx-auto mt-9 flex w-full max-w-md flex-col items-center justify-center gap-3 sm:max-w-none sm:flex-row">
           <a
             href="#enroll"
-            className="inline-flex items-center justify-center gap-2 rounded-md bg-gold px-7 py-4 text-base font-semibold text-gold-foreground shadow-xl shadow-gold/30 transition-all hover:brightness-105"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gold px-7 py-4 text-base font-semibold text-gold-foreground shadow-xl shadow-gold/30 transition-all hover:brightness-105 sm:w-auto"
           >
-            Become a HPP Contractor <ArrowRight className="h-4 w-4" />
+            Become an HPP Contractor <ArrowRight className="h-4 w-4" />
           </a>
           <a
             href="tel:8559544822"
-            className="inline-flex items-center justify-center gap-2 rounded-md border border-white/20 px-7 py-4 text-base font-semibold text-navy-foreground transition-colors hover:bg-white/5"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-white/20 px-7 py-4 text-base font-semibold text-navy-foreground transition-colors hover:bg-white/5 sm:w-auto"
           >
             <Phone className="h-4 w-4" /> (855) 954-HVAC
           </a>
@@ -664,7 +670,6 @@ function Footer() {
             <p className="mb-4 text-xs font-bold uppercase tracking-wider text-gold">Contact Us</p>
             <ul className="space-y-3 text-sm text-white/75">
               <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-gold" /> (855) 954-HVAC</li>
-              <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-gold" /> Claims: (855) 954-HVAC</li>
               <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-gold" /> support@hvacprotectionplus.com</li>
               <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-gold" /> Mon–Fri 8AM–6PM EST</li>
             </ul>
