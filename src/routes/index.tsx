@@ -11,7 +11,7 @@ import {
   Home,
   Repeat,
   Award,
-  Users,
+  
   HandshakeIcon,
   ChevronDown,
   ArrowRight,
@@ -688,8 +688,6 @@ function Footer() {
 }
 
 function Landing() {
-  // Unused-import guard: keep Users referenced for future stat block reinstatement
-  void Users;
   return (
     <div className="min-h-screen bg-background">
       <Header />
