@@ -9,8 +9,14 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ContractorSignupRouteImport } from './routes/contractor-signup'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ContractorSignupRoute = ContractorSignupRouteImport.update({
+  id: '/contractor-signup',
+  path: '/contractor-signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +25,39 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contractor-signup': typeof ContractorSignupRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contractor-signup': typeof ContractorSignupRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contractor-signup': typeof ContractorSignupRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/contractor-signup'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/contractor-signup'
+  id: '__root__' | '/' | '/contractor-signup'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContractorSignupRoute: typeof ContractorSignupRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/contractor-signup': {
+      id: '/contractor-signup'
+      path: '/contractor-signup'
+      fullPath: '/contractor-signup'
+      preLoaderRoute: typeof ContractorSignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +70,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContractorSignupRoute: ContractorSignupRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
