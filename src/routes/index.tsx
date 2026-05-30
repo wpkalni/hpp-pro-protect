@@ -103,7 +103,7 @@ function Header() {
             (855) 954-HVAC
           </a>
           <a
-            href="#enroll"
+            href="/contractor-signup"
             className="inline-flex items-center gap-2 rounded-md bg-gold px-5 py-2.5 text-sm font-semibold text-gold-foreground shadow-sm transition-all hover:brightness-105 hover:shadow-md"
           >
             Become a Contractor
@@ -130,7 +130,7 @@ function Header() {
               </a>
             ))}
             <a
-              href="#enroll"
+              href="/contractor-signup"
               className="mt-3 block rounded-md bg-gold px-4 py-3 text-center text-sm font-semibold text-gold-foreground"
             >
               Become a Contractor
@@ -167,13 +167,13 @@ function Hero() {
           </p>
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
             <a
-              href="#enroll"
+              href="/contractor-signup"
               className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gold px-6 py-3.5 text-base font-semibold text-gold-foreground shadow-lg shadow-gold/20 transition-all hover:brightness-105 sm:w-auto"
             >
               Become an HPP Contractor <ArrowRight className="h-4 w-4" />
             </a>
             <a
-              href="#enroll"
+              href="/contractor-signup"
               className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-gold/60 px-6 py-3.5 text-base font-semibold text-navy-foreground transition-colors hover:bg-white/5 sm:w-auto"
             >
               Sell a Contract
@@ -484,7 +484,7 @@ function ContractorNetwork() {
             ))}
           </div>
           <a
-            href="#enroll"
+            href="/contractor-signup"
             className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-md bg-navy px-6 py-3.5 text-sm font-semibold text-navy-foreground transition-all hover:bg-navy/90 sm:w-fit"
           >
             Apply to Become a Contractor <ArrowRight className="h-4 w-4" />
@@ -601,7 +601,7 @@ function FinalCTA() {
         </p>
         <div className="mx-auto mt-9 flex w-full max-w-md flex-col items-center justify-center gap-3 sm:max-w-none sm:flex-row">
           <a
-            href="#enroll"
+            href="/contractor-signup"
             className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gold px-7 py-4 text-base font-semibold text-gold-foreground shadow-xl shadow-gold/30 transition-all hover:brightness-105 sm:w-auto"
           >
             Become an HPP Contractor <ArrowRight className="h-4 w-4" />
