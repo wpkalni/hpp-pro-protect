@@ -746,6 +746,7 @@ function Landing() {
         <Benefits />
         <EnrollmentFlow />
         <CoverageBanner />
+        <DifferentiatorCallouts />
         <ContractorNetwork />
         <Homeowner />
         <FAQ />
