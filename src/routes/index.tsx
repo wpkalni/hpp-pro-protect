@@ -63,7 +63,7 @@ const navItems = [
   "How It Works",
   "Coverage",
   "Resources",
-  "Company",
+  "Why We Built HPP",
 ];
 
 function Logo({ className = "" }: { className?: string }) {
