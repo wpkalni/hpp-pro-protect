@@ -440,6 +440,56 @@ function CoverageBanner() {
   );
 }
 
+function DifferentiatorCallouts() {
+  return (
+    <section className="bg-background py-14 sm:py-16">
+      <div className="mx-auto grid max-w-7xl gap-5 px-5 sm:gap-6 md:grid-cols-2 lg:px-8">
+        <div className="relative overflow-hidden rounded-2xl border-2 border-gold bg-gradient-to-br from-gold/15 via-gold/5 to-background p-7 shadow-[var(--shadow-card)] sm:p-9">
+          <div className="absolute -right-6 -top-6 h-28 w-28 rounded-full bg-gold/10 blur-2xl" />
+          <div className="relative flex items-start gap-4">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gold text-gold-foreground shadow-md">
+              <FileCheck2 className="h-6 w-6" strokeWidth={2.2} />
+            </div>
+            <div>
+              <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.22em] text-gold">
+                HPP Advantage
+              </p>
+              <h3 className="text-xl font-bold text-navy sm:text-2xl">
+                Home of the One-Page Rate Sheet
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                While competitors use complex rate books, HPP keeps it simple —
+                one page, one glance, one quote.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative overflow-hidden rounded-2xl border border-navy/15 bg-navy p-7 text-navy-foreground shadow-[var(--shadow-card)] sm:p-9">
+          <div className="absolute -right-8 -bottom-8 h-32 w-32 rounded-full bg-gold/10 blur-2xl" />
+          <div className="relative flex items-start gap-4">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gold text-gold-foreground shadow-md">
+              <Clock className="h-6 w-6" strokeWidth={2.2} />
+            </div>
+            <div>
+              <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.22em] text-gold">
+                Faster Activation
+              </p>
+              <h3 className="text-xl font-bold text-white sm:text-2xl">
+                Coverage Activates in 30 Days
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/75 sm:text-base">
+                Most competitors require 90 days. HPP gets your customers
+                protected three times faster.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function ContractorNetwork() {
   const bullets = [
     { icon: TrendingUp, t: "Create an easy upsell on installs" },
@@ -696,6 +746,7 @@ function Landing() {
         <Benefits />
         <EnrollmentFlow />
         <CoverageBanner />
+        <DifferentiatorCallouts />
         <ContractorNetwork />
         <Homeowner />
         <FAQ />
