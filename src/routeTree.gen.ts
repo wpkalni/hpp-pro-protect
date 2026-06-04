@@ -9,9 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WhyWeBuiltHppRouteImport } from './routes/why-we-built-hpp'
 import { Route as ContractorSignupRouteImport } from './routes/contractor-signup'
 import { Route as IndexRouteImport } from './routes/index'
 
+const WhyWeBuiltHppRoute = WhyWeBuiltHppRouteImport.update({
+  id: '/why-we-built-hpp',
+  path: '/why-we-built-hpp',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContractorSignupRoute = ContractorSignupRouteImport.update({
   id: '/contractor-signup',
   path: '/contractor-signup',
@@ -26,31 +32,42 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contractor-signup': typeof ContractorSignupRoute
+  '/why-we-built-hpp': typeof WhyWeBuiltHppRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contractor-signup': typeof ContractorSignupRoute
+  '/why-we-built-hpp': typeof WhyWeBuiltHppRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contractor-signup': typeof ContractorSignupRoute
+  '/why-we-built-hpp': typeof WhyWeBuiltHppRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contractor-signup'
+  fullPaths: '/' | '/contractor-signup' | '/why-we-built-hpp'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contractor-signup'
-  id: '__root__' | '/' | '/contractor-signup'
+  to: '/' | '/contractor-signup' | '/why-we-built-hpp'
+  id: '__root__' | '/' | '/contractor-signup' | '/why-we-built-hpp'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContractorSignupRoute: typeof ContractorSignupRoute
+  WhyWeBuiltHppRoute: typeof WhyWeBuiltHppRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/why-we-built-hpp': {
+      id: '/why-we-built-hpp'
+      path: '/why-we-built-hpp'
+      fullPath: '/why-we-built-hpp'
+      preLoaderRoute: typeof WhyWeBuiltHppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contractor-signup': {
       id: '/contractor-signup'
       path: '/contractor-signup'
@@ -71,7 +88,18 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContractorSignupRoute: ContractorSignupRoute,
+  WhyWeBuiltHppRoute: WhyWeBuiltHppRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

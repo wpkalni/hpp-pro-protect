@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   ShieldCheck,
@@ -63,7 +63,7 @@ const navItems = [
   "How It Works",
   "Coverage",
   "Resources",
-  "Company",
+  "Why We Built HPP",
 ];
 
 function Logo({ className = "" }: { className?: string }) {
@@ -79,20 +79,24 @@ function Header() {
           <Logo className="h-8 w-auto sm:h-9 lg:h-11" />
         </a>
         <nav className="hidden items-center gap-1 lg:flex">
-          {navItems.map((item) => (
-            <a
-              key={item}
-              href="#"
-              className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-navy"
-            >
-              {item}
-              {(item === "For Contractors" ||
-                item === "Resources" ||
-                item === "Company") && (
-                <ChevronDown className="h-3.5 w-3.5 opacity-60" />
-              )}
-            </a>
-          ))}
+          {navItems.map((item) => {
+            const isLink = item === "Why We Built HPP";
+            const hasChevron = item === "For Contractors" || item === "Resources" || item === "Why We Built HPP";
+            const Comp = isLink ? Link : "a";
+            const linkProps = isLink ? { to: "/why-we-built-hpp" } : { href: "#" };
+            return (
+              <Comp
+                key={item}
+                {...linkProps}
+                className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-navy"
+              >
+                {item}
+                {hasChevron && (
+                  <ChevronDown className="h-3.5 w-3.5 opacity-60" />
+                )}
+              </Comp>
+            );
+          })}
         </nav>
         <div className="hidden items-center gap-4 lg:flex">
           <a
@@ -120,15 +124,20 @@ function Header() {
       {open && (
         <div className="border-t border-border bg-background lg:hidden">
           <div className="space-y-1 px-5 py-4">
-            {navItems.map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="block rounded-md px-3 py-2.5 text-sm font-medium text-foreground/80"
-              >
-                {item}
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const isLink = item === "Why We Built HPP";
+              const Comp = isLink ? Link : "a";
+              const linkProps = isLink ? { to: "/why-we-built-hpp" } : { href: "#" };
+              return (
+                <Comp
+                  key={item}
+                  {...linkProps}
+                  className="block rounded-md px-3 py-2.5 text-sm font-medium text-foreground/80"
+                >
+                  {item}
+                </Comp>
+              );
+            })}
             <a
               href="/contractor-signup"
               className="mt-3 block rounded-md bg-gold px-4 py-3 text-center text-sm font-semibold text-gold-foreground"
@@ -672,13 +681,29 @@ function Footer() {
   const cols = [
     {
       h: "For Contractors",
-      links: ["Become a Contractor", "Contractor Benefits", "How It Works", "Resources"],
+      links: [
+        { label: "Become a Contractor", href: "/contractor-signup" },
+        { label: "Contractor Benefits", href: "#" },
+        { label: "How It Works", href: "#" },
+        { label: "Resources", href: "#" },
+      ],
     },
     {
       h: "For Homeowners",
-      links: ["Homeowner Coverage", "File a Claim", "FAQs"],
+      links: [
+        { label: "Homeowner Coverage", href: "#" },
+        { label: "File a Claim", href: "#" },
+        { label: "FAQs", href: "#" },
+      ],
     },
-    { h: "Company", links: ["About Us", "Contact Us", "Careers"] },
+    {
+      h: "Company",
+      links: [
+        { label: "Why We Built HPP", href: "/why-we-built-hpp" },
+        { label: "Contact Us", href: "#" },
+        { label: "Careers", href: "#" },
+      ],
+    },
   ];
   return (
     <footer className="bg-navy text-navy-foreground">
@@ -707,10 +732,16 @@ function Footer() {
               <p className="mb-4 text-xs font-bold uppercase tracking-wider text-gold">{c.h}</p>
               <ul className="space-y-2.5">
                 {c.links.map((l) => (
-                  <li key={l}>
-                    <a href="#" className="text-sm text-white/75 hover:text-white">
-                      {l}
-                    </a>
+                  <li key={l.label}>
+                    {l.href.startsWith("/") ? (
+                      <Link to={l.href} className="text-sm text-white/75 hover:text-white">
+                        {l.label}
+                      </Link>
+                    ) : (
+                      <a href={l.href} className="text-sm text-white/75 hover:text-white">
+                        {l.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
