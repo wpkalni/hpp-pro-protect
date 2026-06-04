@@ -672,13 +672,29 @@ function Footer() {
   const cols = [
     {
       h: "For Contractors",
-      links: ["Become a Contractor", "Contractor Benefits", "How It Works", "Resources"],
+      links: [
+        { label: "Become a Contractor", href: "/contractor-signup" },
+        { label: "Contractor Benefits", href: "#" },
+        { label: "How It Works", href: "#" },
+        { label: "Resources", href: "#" },
+      ],
     },
     {
       h: "For Homeowners",
-      links: ["Homeowner Coverage", "File a Claim", "FAQs"],
+      links: [
+        { label: "Homeowner Coverage", href: "#" },
+        { label: "File a Claim", href: "#" },
+        { label: "FAQs", href: "#" },
+      ],
     },
-    { h: "Company", links: ["About Us", "Contact Us", "Careers"] },
+    {
+      h: "Company",
+      links: [
+        { label: "Why We Built HPP", href: "/why-we-built-hpp" },
+        { label: "Contact Us", href: "#" },
+        { label: "Careers", href: "#" },
+      ],
+    },
   ];
   return (
     <footer className="bg-navy text-navy-foreground">
@@ -707,10 +723,16 @@ function Footer() {
               <p className="mb-4 text-xs font-bold uppercase tracking-wider text-gold">{c.h}</p>
               <ul className="space-y-2.5">
                 {c.links.map((l) => (
-                  <li key={l}>
-                    <a href="#" className="text-sm text-white/75 hover:text-white">
-                      {l}
-                    </a>
+                  <li key={l.label}>
+                    {l.href.startsWith("/") ? (
+                      <Link to={l.href} className="text-sm text-white/75 hover:text-white">
+                        {l.label}
+                      </Link>
+                    ) : (
+                      <a href={l.href} className="text-sm text-white/75 hover:text-white">
+                        {l.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
