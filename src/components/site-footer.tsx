@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Youtube } from "lucide-react";
 import logo from "@/assets/hpp-logo.png";
 
@@ -8,7 +9,11 @@ export function SiteFooter() {
       links: ["Become a Contractor", "Contractor Benefits", "How It Works", "Resources"],
     },
     { h: "For Homeowners", links: ["Homeowner Coverage", "File a Claim", "FAQs"] },
-    { h: "Company", links: ["About Us", "Contact Us", "Careers"] },
+    { h: "Company", links: [
+      { label: "Why We Built HPP", href: "/why-we-built-hpp" },
+      { label: "Contact Us", href: "#" },
+      { label: "Careers", href: "#" },
+    ] },
   ];
   return (
     <footer className="bg-navy text-navy-foreground">
