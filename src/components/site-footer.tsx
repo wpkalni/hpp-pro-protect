@@ -7,7 +7,7 @@ export function SiteFooter() {
     {
       h: "For Contractors",
       links: [
-        { label: "Become a Contractor", href: "/contractor-signup" },
+        { label: "Become a Contractor", href: "/become-a-contractor" },
         { label: "Contractor Benefits", href: "#" },
         { label: "How It Works", href: "#" },
         { label: "Resources", href: "#" },

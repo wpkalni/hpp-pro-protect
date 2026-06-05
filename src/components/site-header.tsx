@@ -46,7 +46,7 @@ export function SiteHeader() {
             (855) 954-HVAC
           </a>
           <Link
-            to="/contractor-signup"
+            to="/become-a-contractor"
             className="inline-flex items-center gap-2 rounded-md bg-gold px-5 py-2.5 text-sm font-semibold text-gold-foreground shadow-sm transition-all hover:brightness-105 hover:shadow-md"
           >
             Become a Contractor
@@ -78,7 +78,7 @@ export function SiteHeader() {
               );
             })}
             <Link
-              to="/contractor-signup"
+              to="/become-a-contractor"
               className="mt-3 block rounded-md bg-gold px-4 py-3 text-center text-sm font-semibold text-gold-foreground"
             >
               Become a Contractor
