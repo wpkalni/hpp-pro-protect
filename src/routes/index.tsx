@@ -692,7 +692,7 @@ function Footer() {
       h: "For Homeowners",
       links: [
         { label: "Homeowner Coverage", href: "#" },
-        { label: "File a Claim", href: "#" },
+        { label: "File a Claim", href: "/file-a-claim" },
         { label: "FAQs", href: "#" },
       ],
     },
