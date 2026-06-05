@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WhyWeBuiltHppRouteImport } from './routes/why-we-built-hpp'
 import { Route as ContractorSignupRouteImport } from './routes/contractor-signup'
+import { Route as BecomeAContractorRouteImport } from './routes/become-a-contractor'
 import { Route as IndexRouteImport } from './routes/index'
 
 const WhyWeBuiltHppRoute = WhyWeBuiltHppRouteImport.update({
@@ -23,6 +24,11 @@ const ContractorSignupRoute = ContractorSignupRouteImport.update({
   path: '/contractor-signup',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BecomeAContractorRoute = BecomeAContractorRouteImport.update({
+  id: '/become-a-contractor',
+  path: '/become-a-contractor',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -31,30 +37,43 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/become-a-contractor': typeof BecomeAContractorRoute
   '/contractor-signup': typeof ContractorSignupRoute
   '/why-we-built-hpp': typeof WhyWeBuiltHppRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/become-a-contractor': typeof BecomeAContractorRoute
   '/contractor-signup': typeof ContractorSignupRoute
   '/why-we-built-hpp': typeof WhyWeBuiltHppRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/become-a-contractor': typeof BecomeAContractorRoute
   '/contractor-signup': typeof ContractorSignupRoute
   '/why-we-built-hpp': typeof WhyWeBuiltHppRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contractor-signup' | '/why-we-built-hpp'
+  fullPaths:
+    | '/'
+    | '/become-a-contractor'
+    | '/contractor-signup'
+    | '/why-we-built-hpp'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contractor-signup' | '/why-we-built-hpp'
-  id: '__root__' | '/' | '/contractor-signup' | '/why-we-built-hpp'
+  to: '/' | '/become-a-contractor' | '/contractor-signup' | '/why-we-built-hpp'
+  id:
+    | '__root__'
+    | '/'
+    | '/become-a-contractor'
+    | '/contractor-signup'
+    | '/why-we-built-hpp'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BecomeAContractorRoute: typeof BecomeAContractorRoute
   ContractorSignupRoute: typeof ContractorSignupRoute
   WhyWeBuiltHppRoute: typeof WhyWeBuiltHppRoute
 }
@@ -75,6 +94,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContractorSignupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/become-a-contractor': {
+      id: '/become-a-contractor'
+      path: '/become-a-contractor'
+      fullPath: '/become-a-contractor'
+      preLoaderRoute: typeof BecomeAContractorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -87,6 +113,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BecomeAContractorRoute: BecomeAContractorRoute,
   ContractorSignupRoute: ContractorSignupRoute,
   WhyWeBuiltHppRoute: WhyWeBuiltHppRoute,
 }
