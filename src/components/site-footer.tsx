@@ -14,7 +14,7 @@ export function SiteFooter() {
       ],
     },
     { h: "For Homeowners", links: [
-      { label: "Homeowner Coverage", href: "#" },
+      { label: "Coverage Options", href: "/coverage-options" },
       { label: "File a Claim", href: "/file-a-claim" },
       { label: "FAQs", href: "#" },
     ] },
