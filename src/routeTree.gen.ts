@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WhyWeBuiltHppRouteImport } from './routes/why-we-built-hpp'
 import { Route as FileAClaimRouteImport } from './routes/file-a-claim'
+import { Route as CoverageOptionsRouteImport } from './routes/coverage-options'
 import { Route as ContractorSignupRouteImport } from './routes/contractor-signup'
 import { Route as BecomeAContractorRouteImport } from './routes/become-a-contractor'
 import { Route as IndexRouteImport } from './routes/index'
@@ -23,6 +24,11 @@ const WhyWeBuiltHppRoute = WhyWeBuiltHppRouteImport.update({
 const FileAClaimRoute = FileAClaimRouteImport.update({
   id: '/file-a-claim',
   path: '/file-a-claim',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoverageOptionsRoute = CoverageOptionsRouteImport.update({
+  id: '/coverage-options',
+  path: '/coverage-options',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContractorSignupRoute = ContractorSignupRouteImport.update({
@@ -45,6 +51,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/become-a-contractor': typeof BecomeAContractorRoute
   '/contractor-signup': typeof ContractorSignupRoute
+  '/coverage-options': typeof CoverageOptionsRoute
   '/file-a-claim': typeof FileAClaimRoute
   '/why-we-built-hpp': typeof WhyWeBuiltHppRoute
 }
@@ -52,6 +59,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/become-a-contractor': typeof BecomeAContractorRoute
   '/contractor-signup': typeof ContractorSignupRoute
+  '/coverage-options': typeof CoverageOptionsRoute
   '/file-a-claim': typeof FileAClaimRoute
   '/why-we-built-hpp': typeof WhyWeBuiltHppRoute
 }
@@ -60,6 +68,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/become-a-contractor': typeof BecomeAContractorRoute
   '/contractor-signup': typeof ContractorSignupRoute
+  '/coverage-options': typeof CoverageOptionsRoute
   '/file-a-claim': typeof FileAClaimRoute
   '/why-we-built-hpp': typeof WhyWeBuiltHppRoute
 }
@@ -69,6 +78,7 @@ export interface FileRouteTypes {
     | '/'
     | '/become-a-contractor'
     | '/contractor-signup'
+    | '/coverage-options'
     | '/file-a-claim'
     | '/why-we-built-hpp'
   fileRoutesByTo: FileRoutesByTo
@@ -76,6 +86,7 @@ export interface FileRouteTypes {
     | '/'
     | '/become-a-contractor'
     | '/contractor-signup'
+    | '/coverage-options'
     | '/file-a-claim'
     | '/why-we-built-hpp'
   id:
@@ -83,6 +94,7 @@ export interface FileRouteTypes {
     | '/'
     | '/become-a-contractor'
     | '/contractor-signup'
+    | '/coverage-options'
     | '/file-a-claim'
     | '/why-we-built-hpp'
   fileRoutesById: FileRoutesById
@@ -91,6 +103,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BecomeAContractorRoute: typeof BecomeAContractorRoute
   ContractorSignupRoute: typeof ContractorSignupRoute
+  CoverageOptionsRoute: typeof CoverageOptionsRoute
   FileAClaimRoute: typeof FileAClaimRoute
   WhyWeBuiltHppRoute: typeof WhyWeBuiltHppRoute
 }
@@ -109,6 +122,13 @@ declare module '@tanstack/react-router' {
       path: '/file-a-claim'
       fullPath: '/file-a-claim'
       preLoaderRoute: typeof FileAClaimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coverage-options': {
+      id: '/coverage-options'
+      path: '/coverage-options'
+      fullPath: '/coverage-options'
+      preLoaderRoute: typeof CoverageOptionsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contractor-signup': {
@@ -139,6 +159,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BecomeAContractorRoute: BecomeAContractorRoute,
   ContractorSignupRoute: ContractorSignupRoute,
+  CoverageOptionsRoute: CoverageOptionsRoute,
   FileAClaimRoute: FileAClaimRoute,
   WhyWeBuiltHppRoute: WhyWeBuiltHppRoute,
 }
