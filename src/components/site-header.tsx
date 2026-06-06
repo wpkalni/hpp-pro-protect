@@ -3,13 +3,13 @@ import { Link } from "@tanstack/react-router";
 import { ChevronDown, Menu, Phone } from "lucide-react";
 import logo from "@/assets/hpp-logo.png";
 
-const navItems = [
-  "For Contractors",
-  "For Homeowners",
-  "How It Works",
-  "Coverage",
-  "Resources",
-  "Why We Built HPP",
+const navItems: { label: string; href: string; isLink?: boolean }[] = [
+  { label: "For Contractors", href: "#" },
+  { label: "For Homeowners", href: "#" },
+  { label: "How It Works", href: "#" },
+  { label: "Coverage", href: "/coverage-options", isLink: true },
+  { label: "Resources", href: "#" },
+  { label: "Why We Built HPP", href: "/why-we-built-hpp", isLink: true },
 ];
 
 export function SiteHeader() {
