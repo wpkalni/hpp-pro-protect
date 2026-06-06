@@ -3,13 +3,13 @@ import { Link } from "@tanstack/react-router";
 import { ChevronDown, Menu, Phone } from "lucide-react";
 import logo from "@/assets/hpp-logo.png";
 
-const navItems = [
-  "For Contractors",
-  "For Homeowners",
-  "How It Works",
-  "Coverage",
-  "Resources",
-  "Why We Built HPP",
+const navItems: { label: string; href: string; isLink?: boolean }[] = [
+  { label: "For Contractors", href: "#" },
+  { label: "For Homeowners", href: "#" },
+  { label: "How It Works", href: "#" },
+  { label: "Coverage", href: "/coverage-options", isLink: true },
+  { label: "Resources", href: "#" },
+  { label: "Why We Built HPP", href: "/why-we-built-hpp", isLink: true },
 ];
 
 export function SiteHeader() {
@@ -22,17 +22,16 @@ export function SiteHeader() {
         </Link>
         <nav className="hidden items-center gap-1 lg:flex">
           {navItems.map((item) => {
-            const isLink = item === "Why We Built HPP";
-            const hasChevron = item === "For Contractors" || item === "Resources" || item === "Why We Built HPP";
-            const Comp = isLink ? Link : "a";
-            const linkProps = isLink ? { to: "/why-we-built-hpp" } : { href: "#" };
+            const hasChevron = item.label === "For Contractors" || item.label === "Resources" || item.label === "Why We Built HPP";
+            const Comp = item.isLink ? Link : "a";
+            const linkProps = item.isLink ? { to: item.href } : { href: item.href };
             return (
               <Comp
-                key={item}
+                key={item.label}
                 {...linkProps}
                 className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-navy"
               >
-                {item}
+                {item.label}
                 {hasChevron && (
                   <ChevronDown className="h-3.5 w-3.5 opacity-60" />
                 )}
@@ -64,16 +63,15 @@ export function SiteHeader() {
         <div className="border-t border-border bg-background lg:hidden">
           <div className="space-y-1 px-5 py-4">
             {navItems.map((item) => {
-              const isLink = item === "Why We Built HPP";
-              const Comp = isLink ? Link : "a";
-              const linkProps = isLink ? { to: "/why-we-built-hpp" } : { href: "#" };
+              const Comp = item.isLink ? Link : "a";
+              const linkProps = item.isLink ? { to: item.href } : { href: item.href };
               return (
                 <Comp
-                  key={item}
+                  key={item.label}
                   {...linkProps}
                   className="block rounded-md px-3 py-2.5 text-sm font-medium text-foreground/80"
                 >
-                  {item}
+                  {item.label}
                 </Comp>
               );
             })}
