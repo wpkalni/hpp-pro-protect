@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WhyWeBuiltHppRouteImport } from './routes/why-we-built-hpp'
+import { Route as HomeownerCoverageRouteImport } from './routes/homeowner-coverage'
 import { Route as FileAClaimRouteImport } from './routes/file-a-claim'
 import { Route as CoverageOptionsRouteImport } from './routes/coverage-options'
 import { Route as ContractorSignupRouteImport } from './routes/contractor-signup'
@@ -19,6 +20,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const WhyWeBuiltHppRoute = WhyWeBuiltHppRouteImport.update({
   id: '/why-we-built-hpp',
   path: '/why-we-built-hpp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomeownerCoverageRoute = HomeownerCoverageRouteImport.update({
+  id: '/homeowner-coverage',
+  path: '/homeowner-coverage',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FileAClaimRoute = FileAClaimRouteImport.update({
@@ -53,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/contractor-signup': typeof ContractorSignupRoute
   '/coverage-options': typeof CoverageOptionsRoute
   '/file-a-claim': typeof FileAClaimRoute
+  '/homeowner-coverage': typeof HomeownerCoverageRoute
   '/why-we-built-hpp': typeof WhyWeBuiltHppRoute
 }
 export interface FileRoutesByTo {
@@ -61,6 +68,7 @@ export interface FileRoutesByTo {
   '/contractor-signup': typeof ContractorSignupRoute
   '/coverage-options': typeof CoverageOptionsRoute
   '/file-a-claim': typeof FileAClaimRoute
+  '/homeowner-coverage': typeof HomeownerCoverageRoute
   '/why-we-built-hpp': typeof WhyWeBuiltHppRoute
 }
 export interface FileRoutesById {
@@ -70,6 +78,7 @@ export interface FileRoutesById {
   '/contractor-signup': typeof ContractorSignupRoute
   '/coverage-options': typeof CoverageOptionsRoute
   '/file-a-claim': typeof FileAClaimRoute
+  '/homeowner-coverage': typeof HomeownerCoverageRoute
   '/why-we-built-hpp': typeof WhyWeBuiltHppRoute
 }
 export interface FileRouteTypes {
@@ -80,6 +89,7 @@ export interface FileRouteTypes {
     | '/contractor-signup'
     | '/coverage-options'
     | '/file-a-claim'
+    | '/homeowner-coverage'
     | '/why-we-built-hpp'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -88,6 +98,7 @@ export interface FileRouteTypes {
     | '/contractor-signup'
     | '/coverage-options'
     | '/file-a-claim'
+    | '/homeowner-coverage'
     | '/why-we-built-hpp'
   id:
     | '__root__'
@@ -96,6 +107,7 @@ export interface FileRouteTypes {
     | '/contractor-signup'
     | '/coverage-options'
     | '/file-a-claim'
+    | '/homeowner-coverage'
     | '/why-we-built-hpp'
   fileRoutesById: FileRoutesById
 }
@@ -105,6 +117,7 @@ export interface RootRouteChildren {
   ContractorSignupRoute: typeof ContractorSignupRoute
   CoverageOptionsRoute: typeof CoverageOptionsRoute
   FileAClaimRoute: typeof FileAClaimRoute
+  HomeownerCoverageRoute: typeof HomeownerCoverageRoute
   WhyWeBuiltHppRoute: typeof WhyWeBuiltHppRoute
 }
 
@@ -115,6 +128,13 @@ declare module '@tanstack/react-router' {
       path: '/why-we-built-hpp'
       fullPath: '/why-we-built-hpp'
       preLoaderRoute: typeof WhyWeBuiltHppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/homeowner-coverage': {
+      id: '/homeowner-coverage'
+      path: '/homeowner-coverage'
+      fullPath: '/homeowner-coverage'
+      preLoaderRoute: typeof HomeownerCoverageRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/file-a-claim': {
@@ -161,6 +181,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContractorSignupRoute: ContractorSignupRoute,
   CoverageOptionsRoute: CoverageOptionsRoute,
   FileAClaimRoute: FileAClaimRoute,
+  HomeownerCoverageRoute: HomeownerCoverageRoute,
   WhyWeBuiltHppRoute: WhyWeBuiltHppRoute,
 }
 export const routeTree = rootRouteImport
