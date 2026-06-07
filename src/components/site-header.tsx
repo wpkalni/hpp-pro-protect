@@ -5,7 +5,7 @@ import logo from "@/assets/hpp-logo.png";
 
 const navItems: { label: string; href: string; isLink?: boolean }[] = [
   { label: "For Contractors", href: "#" },
-  { label: "For Homeowners", href: "#" },
+  { label: "For Homeowners", href: "/homeowner-coverage", isLink: true },
   { label: "How It Works", href: "#" },
   { label: "Coverage", href: "/coverage-options", isLink: true },
   { label: "Resources", href: "#" },

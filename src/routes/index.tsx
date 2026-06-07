@@ -80,11 +80,11 @@ function Header() {
         </a>
         <nav className="hidden items-center gap-1 lg:flex">
           {navItems.map((item) => {
-            const isLink = item === "Why We Built HPP" || item === "Coverage";
+            const isLink = item === "Why We Built HPP" || item === "Coverage" || item === "For Homeowners";
             const hasChevron = item === "For Contractors" || item === "Resources" || item === "Why We Built HPP";
             const Comp = isLink ? Link : "a";
             const linkProps = isLink
-              ? { to: item === "Coverage" ? "/coverage-options" : "/why-we-built-hpp" }
+              ? { to: item === "Coverage" ? "/coverage-options" : item === "For Homeowners" ? "/homeowner-coverage" : "/why-we-built-hpp" }
               : { href: "#" };
             return (
               <Comp
@@ -127,10 +127,10 @@ function Header() {
         <div className="border-t border-border bg-background lg:hidden">
           <div className="space-y-1 px-5 py-4">
             {navItems.map((item) => {
-              const isLink = item === "Why We Built HPP" || item === "Coverage";
+              const isLink = item === "Why We Built HPP" || item === "Coverage" || item === "For Homeowners";
               const Comp = isLink ? Link : "a";
               const linkProps = isLink
-                ? { to: item === "Coverage" ? "/coverage-options" : "/why-we-built-hpp" }
+                ? { to: item === "Coverage" ? "/coverage-options" : item === "For Homeowners" ? "/homeowner-coverage" : "/why-we-built-hpp" }
                 : { href: "#" };
               return (
                 <Comp
