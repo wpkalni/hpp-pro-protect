@@ -825,10 +825,10 @@ function Landing() {
       <Header />
       <main>
         <Hero />
+        <DifferentiatorCallouts />
         <Benefits />
         <EnrollmentFlow />
         <CoverageBanner />
-        <DifferentiatorCallouts />
         <ContractorNetwork />
         <Homeowner />
         <FAQ />
