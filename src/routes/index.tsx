@@ -233,9 +233,9 @@ function Hero() {
               </div>
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wide text-navy">
-                  Coverage for New &amp; Used Systems
+                  Labor + Materials Coverage
                 </p>
-                <p className="mt-1 text-sm font-bold text-gold">UP TO 10 YEARS OLD</p>
+                <p className="mt-1 text-sm font-bold text-gold">NEW &amp; USED — UP TO 10 YEARS OLD</p>
               </div>
             </div>
           </div>
