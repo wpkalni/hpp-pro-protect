@@ -331,7 +331,7 @@ function EnrollmentFlow() {
           <h2 className="text-3xl font-bold text-navy sm:text-4xl lg:text-5xl">
             Sell Coverage in Minutes.
           </h2>
-          <p className="mt-5 text-base text-muted-foreground sm:text-lg">
+          <p className="mt-5 text-base font-medium text-foreground/80 sm:text-lg">
             Contractors can quote, enroll, and register coverage from the field
             or office with a simple guided flow.
           </p>
@@ -373,7 +373,7 @@ function EnrollmentFlow() {
                 </div>
                 <div>
                   <p className="font-semibold text-navy">{b.t}</p>
-                  <p className="text-sm text-muted-foreground">{b.d}</p>
+                  <p className="text-sm font-medium text-foreground/75">{b.d}</p>
                 </div>
               </div>
             ))}
@@ -390,7 +390,7 @@ function EnrollmentFlow() {
             <h3 className="text-2xl font-bold text-navy sm:text-3xl">
               Quote. Enroll. Activate.
             </h3>
-            <p className="mt-3 text-muted-foreground">
+            <p className="mt-3 font-medium text-foreground/75">
               A guided four-step flow your whole team can run.
             </p>
             <div className="mt-6 space-y-3">
@@ -404,7 +404,7 @@ function EnrollmentFlow() {
                   </div>
                   <div className="flex-1">
                     <p className="text-sm font-bold text-navy">{s.title}</p>
-                    <p className="text-xs text-muted-foreground">{s.desc}</p>
+                    <p className="text-xs font-medium text-foreground/75">{s.desc}</p>
                   </div>
                   <s.icon className="h-5 w-5 text-navy/40" />
                 </div>
@@ -517,7 +517,7 @@ function DifferentiatorCallouts() {
               <h3 className="text-xl font-bold text-navy sm:text-2xl">
                 Home of the One-Page Rate Sheet
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
+              <p className="mt-2 text-sm font-medium leading-relaxed text-foreground/80 sm:text-base">
                 While competitors use complex rate books, HPP keeps it simple —
                 one page, one glance, one quote.
               </p>
@@ -538,7 +538,7 @@ function DifferentiatorCallouts() {
               <h3 className="text-xl font-bold text-white sm:text-2xl">
                 Coverage Activates in 30 Days
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/75 sm:text-base">
+              <p className="mt-2 text-sm font-medium leading-relaxed text-white/90 sm:text-base">
                 Most competitors require 90 days. HPP gets your customers
                 protected three times faster.
               </p>
@@ -578,7 +578,7 @@ function ContractorNetwork() {
           <h2 className="text-3xl font-bold text-navy sm:text-4xl lg:text-5xl">
             Turn Warranty Coverage Into a Contractor Growth Tool.
           </h2>
-          <p className="mt-5 max-w-md text-muted-foreground">
+          <p className="mt-5 max-w-md font-medium text-foreground/75">
             HPP isn&apos;t just protection — it&apos;s a sales lever. Use it to win
             more bids, lift ticket averages, and keep customers loyal long after
             the install is done.
@@ -697,7 +697,7 @@ function FAQ() {
                 </span>
               </div>
               {openIdx === i && (
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{a}</p>
+                <p className="mt-3 text-sm font-medium leading-relaxed text-foreground/75">{a}</p>
               )}
             </button>
           ))}
@@ -723,7 +723,7 @@ function FinalCTA() {
           <br />
           <span className="text-gold">Backed by HPP.</span>
         </h2>
-        <p className="mx-auto mt-6 max-w-xl text-base text-white/75 sm:text-lg">
+        <p className="mx-auto mt-6 max-w-xl text-base font-medium text-white/90 sm:text-lg">
           Add revenue to every install and keep customers coming back —
           enroll jobs in minutes from anywhere.
         </p>
