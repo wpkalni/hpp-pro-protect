@@ -337,6 +337,33 @@ function EnrollmentFlow() {
           </p>
         </div>
 
+        <div className="mx-auto mt-10 max-w-5xl overflow-hidden rounded-2xl border-2 border-gold bg-gradient-to-br from-navy via-navy to-navy/95 p-6 text-navy-foreground shadow-2xl shadow-navy/20 sm:p-8">
+          <div className="grid items-center gap-6 sm:grid-cols-[auto_1fr_auto]">
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gold text-gold-foreground shadow-lg">
+              <ScanLine className="h-8 w-8" strokeWidth={2.2} />
+            </div>
+            <div>
+              <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.22em] text-gold">
+                Featured · HPP App
+              </p>
+              <h3 className="text-2xl font-bold text-white sm:text-3xl">
+                Smart Scan. Enroll in Seconds.
+              </h3>
+              <p className="mt-2 text-sm font-medium leading-relaxed text-white/85 sm:text-base">
+                Point the HPP app camera at the equipment data plate. Smart Scan
+                reads the serial number, model, and system details automatically
+                — no manual entry required. Average capture time: under 30 seconds.
+              </p>
+            </div>
+            <div className="hidden shrink-0 rounded-xl bg-white/5 px-5 py-4 text-center ring-1 ring-white/10 sm:block">
+              <p className="text-3xl font-bold text-gold">&lt; 30s</p>
+              <p className="mt-1 text-[11px] font-bold uppercase tracking-wider text-white/70">Avg. Capture</p>
+            </div>
+          </div>
+        </div>
+
+
+
         <div className="mt-12 grid items-center gap-10 sm:mt-16 lg:grid-cols-12 lg:gap-12">
           <div className="space-y-5 lg:col-span-4">
             {bullets.map((b) => (
