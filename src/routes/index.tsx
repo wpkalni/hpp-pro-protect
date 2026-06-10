@@ -267,6 +267,16 @@ function Benefits() {
       title: "Keep Customers Coming Back",
       desc: "Build long-term retention with coverage that drives repeat business.",
     },
+    {
+      icon: FileCheck2,
+      title: "Simple Claims Process",
+      desc: "Real humans review claims fast — no prior authorization required.",
+    },
+    {
+      icon: Award,
+      title: "First to Cover Used Systems",
+      desc: "Industry-first protection for qualifying HVAC systems up to 10 years old — new and used. No other program matches this.",
+    },
   ];
   return (
     <section className="bg-background py-16 sm:py-20 lg:py-28">
@@ -279,7 +289,7 @@ function Benefits() {
             More revenue. More retention. Every install.
           </h2>
         </div>
-        <div className="mt-12 grid gap-6 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+        <div className="mt-12 grid gap-6 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {items.map((it) => (
             <div
               key={it.title}
@@ -289,7 +299,7 @@ function Benefits() {
                 <it.icon className="h-6 w-6 text-gold" strokeWidth={2.2} />
               </div>
               <h3 className="mb-2 text-base font-bold text-navy">{it.title}</h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">{it.desc}</p>
+              <p className="text-sm font-medium leading-relaxed text-foreground/75">{it.desc}</p>
             </div>
           ))}
         </div>
