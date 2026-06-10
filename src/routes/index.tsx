@@ -173,12 +173,16 @@ function Hero() {
             Help Homeowners Say Yes —{" "}
             <span className="text-gold">and Add Revenue</span> to Every Install.
           </h1>
-          <p className="mx-auto mt-6 max-w-xl text-base text-white/75 sm:text-lg lg:mx-0">
+          <div className="mx-auto mt-6 inline-flex w-fit items-center gap-2 rounded-full border-2 border-gold bg-gold/15 px-4 py-2 text-sm font-bold text-gold shadow-lg shadow-gold/10 sm:text-base lg:mx-0">
+            <Award className="h-4 w-4 shrink-0" strokeWidth={2.4} />
+            <span>First in the industry to cover used systems up to 10 years old.</span>
+          </div>
+          <p className="mx-auto mt-6 max-w-xl text-base font-medium text-white/85 sm:text-lg lg:mx-0">
             HPP gives HVAC contractors a simple way to offer protection on new and
             used systems, enroll customers fast, and create long-term retention
             after the install.
           </p>
-          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
+          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start">
             <a
               href="/contractor-signup"
               className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gold px-6 py-3.5 text-base font-semibold text-gold-foreground shadow-lg shadow-gold/20 transition-all hover:brightness-105 sm:w-auto"
@@ -191,6 +195,12 @@ function Hero() {
             >
               Sell a Contract
             </a>
+            <Link
+              to="/file-a-claim"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-white/30 bg-white/5 px-6 py-3.5 text-base font-semibold text-navy-foreground transition-colors hover:bg-white/10 sm:w-auto"
+            >
+              File a Claim
+            </Link>
           </div>
           <div className="mx-auto mt-10 grid w-full max-w-xl grid-cols-1 gap-5 border-t border-white/10 pt-8 sm:grid-cols-3 lg:mx-0">
             {trust.map((t) => (
@@ -223,9 +233,9 @@ function Hero() {
               </div>
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wide text-navy">
-                  Coverage for New &amp; Used Systems
+                  Labor + Materials Coverage
                 </p>
-                <p className="mt-1 text-sm font-bold text-gold">UP TO 10 YEARS OLD</p>
+                <p className="mt-1 text-sm font-bold text-gold">NEW &amp; USED — UP TO 10 YEARS OLD</p>
               </div>
             </div>
           </div>
@@ -257,6 +267,16 @@ function Benefits() {
       title: "Keep Customers Coming Back",
       desc: "Build long-term retention with coverage that drives repeat business.",
     },
+    {
+      icon: FileCheck2,
+      title: "Simple Claims Process",
+      desc: "Real humans review claims fast — no prior authorization required.",
+    },
+    {
+      icon: Award,
+      title: "First to Cover Used Systems",
+      desc: "Industry-first protection for qualifying HVAC systems up to 10 years old — new and used. No other program matches this.",
+    },
   ];
   return (
     <section className="bg-background py-16 sm:py-20 lg:py-28">
@@ -269,7 +289,7 @@ function Benefits() {
             More revenue. More retention. Every install.
           </h2>
         </div>
-        <div className="mt-12 grid gap-6 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+        <div className="mt-12 grid gap-6 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {items.map((it) => (
             <div
               key={it.title}
@@ -279,7 +299,7 @@ function Benefits() {
                 <it.icon className="h-6 w-6 text-gold" strokeWidth={2.2} />
               </div>
               <h3 className="mb-2 text-base font-bold text-navy">{it.title}</h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">{it.desc}</p>
+              <p className="text-sm font-medium leading-relaxed text-foreground/75">{it.desc}</p>
             </div>
           ))}
         </div>
@@ -311,11 +331,38 @@ function EnrollmentFlow() {
           <h2 className="text-3xl font-bold text-navy sm:text-4xl lg:text-5xl">
             Sell Coverage in Minutes.
           </h2>
-          <p className="mt-5 text-base text-muted-foreground sm:text-lg">
+          <p className="mt-5 text-base font-medium text-foreground/80 sm:text-lg">
             Contractors can quote, enroll, and register coverage from the field
             or office with a simple guided flow.
           </p>
         </div>
+
+        <div className="mx-auto mt-10 max-w-5xl overflow-hidden rounded-2xl border-2 border-gold bg-gradient-to-br from-navy via-navy to-navy/95 p-6 text-navy-foreground shadow-2xl shadow-navy/20 sm:p-8">
+          <div className="grid items-center gap-6 sm:grid-cols-[auto_1fr_auto]">
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gold text-gold-foreground shadow-lg">
+              <ScanLine className="h-8 w-8" strokeWidth={2.2} />
+            </div>
+            <div>
+              <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.22em] text-gold">
+                Featured · HPP App
+              </p>
+              <h3 className="text-2xl font-bold text-white sm:text-3xl">
+                Smart Scan. Enroll in Seconds.
+              </h3>
+              <p className="mt-2 text-sm font-medium leading-relaxed text-white/85 sm:text-base">
+                Point the HPP app camera at the equipment data plate. Smart Scan
+                reads the serial number, model, and system details automatically
+                — no manual entry required. Average capture time: under 30 seconds.
+              </p>
+            </div>
+            <div className="hidden shrink-0 rounded-xl bg-white/5 px-5 py-4 text-center ring-1 ring-white/10 sm:block">
+              <p className="text-3xl font-bold text-gold">&lt; 30s</p>
+              <p className="mt-1 text-[11px] font-bold uppercase tracking-wider text-white/70">Avg. Capture</p>
+            </div>
+          </div>
+        </div>
+
+
 
         <div className="mt-12 grid items-center gap-10 sm:mt-16 lg:grid-cols-12 lg:gap-12">
           <div className="space-y-5 lg:col-span-4">
@@ -326,7 +373,7 @@ function EnrollmentFlow() {
                 </div>
                 <div>
                   <p className="font-semibold text-navy">{b.t}</p>
-                  <p className="text-sm text-muted-foreground">{b.d}</p>
+                  <p className="text-sm font-medium text-foreground/75">{b.d}</p>
                 </div>
               </div>
             ))}
@@ -343,7 +390,7 @@ function EnrollmentFlow() {
             <h3 className="text-2xl font-bold text-navy sm:text-3xl">
               Quote. Enroll. Activate.
             </h3>
-            <p className="mt-3 text-muted-foreground">
+            <p className="mt-3 font-medium text-foreground/75">
               A guided four-step flow your whole team can run.
             </p>
             <div className="mt-6 space-y-3">
@@ -357,7 +404,7 @@ function EnrollmentFlow() {
                   </div>
                   <div className="flex-1">
                     <p className="text-sm font-bold text-navy">{s.title}</p>
-                    <p className="text-xs text-muted-foreground">{s.desc}</p>
+                    <p className="text-xs font-medium text-foreground/75">{s.desc}</p>
                   </div>
                   <s.icon className="h-5 w-5 text-navy/40" />
                 </div>
@@ -419,7 +466,7 @@ function PhoneMockup() {
 function CoverageBanner() {
   const items = [
     { icon: Home, t: "New & Used Systems", s: "Coverage up to 10 years old" },
-    { icon: Wrench, t: "Parts & Labor", s: "Including compressor coverage" },
+    { icon: Wrench, t: "Labor + Materials", s: "Including compressor coverage" },
     { icon: ShieldCheck, t: "Flexible Terms", s: "Plans tailored to the job" },
     { icon: TrendingUp, t: "Easy to Attach", s: "Offered at point of sale" },
   ];
@@ -470,7 +517,7 @@ function DifferentiatorCallouts() {
               <h3 className="text-xl font-bold text-navy sm:text-2xl">
                 Home of the One-Page Rate Sheet
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
+              <p className="mt-2 text-sm font-medium leading-relaxed text-foreground/80 sm:text-base">
                 While competitors use complex rate books, HPP keeps it simple —
                 one page, one glance, one quote.
               </p>
@@ -491,7 +538,7 @@ function DifferentiatorCallouts() {
               <h3 className="text-xl font-bold text-white sm:text-2xl">
                 Coverage Activates in 30 Days
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/75 sm:text-base">
+              <p className="mt-2 text-sm font-medium leading-relaxed text-white/90 sm:text-base">
                 Most competitors require 90 days. HPP gets your customers
                 protected three times faster.
               </p>
@@ -531,7 +578,7 @@ function ContractorNetwork() {
           <h2 className="text-3xl font-bold text-navy sm:text-4xl lg:text-5xl">
             Turn Warranty Coverage Into a Contractor Growth Tool.
           </h2>
-          <p className="mt-5 max-w-md text-muted-foreground">
+          <p className="mt-5 max-w-md font-medium text-foreground/75">
             HPP isn&apos;t just protection — it&apos;s a sales lever. Use it to win
             more bids, lift ticket averages, and keep customers loyal long after
             the install is done.
@@ -571,17 +618,35 @@ function Homeowner() {
             <br />
             Real peace of mind.
           </h2>
-          <p className="mt-5 max-w-md text-muted-foreground">
+          <p className="mt-5 max-w-md font-medium text-foreground/75">
             Whether your system is brand new or has a few years on it, HPP offers
             simple, dependable coverage so you&apos;re never caught off guard by
             an unexpected repair.
           </p>
-          <a
-            href="#"
+          <div className="mt-7 max-w-md rounded-2xl border-l-4 border-gold bg-background p-5 shadow-[var(--shadow-card)]">
+            <div className="flex items-start gap-3">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gold text-gold-foreground">
+                <ShieldCheck className="h-5 w-5" strokeWidth={2.2} />
+              </div>
+              <div>
+                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold">
+                  Limited Warranty Program
+                </p>
+                <p className="mt-1 text-base font-bold text-navy">
+                  Protection Built Into Every New Install.
+                </p>
+                <p className="mt-2 text-sm font-medium leading-relaxed text-foreground/75">
+                  Ask your HPP contractor about our 3-year and 5-year limited warranty plans — coverage that comes standard with your new system installation at no separate cost to you.
+                </p>
+              </div>
+            </div>
+          </div>
+          <Link
+            to="/homeowner-coverage"
             className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-md bg-navy px-6 py-3.5 text-sm font-semibold text-navy-foreground transition-all hover:bg-navy/90 sm:w-fit"
           >
             Learn More for Homeowners <ArrowRight className="h-4 w-4" />
-          </a>
+          </Link>
         </div>
         <div className="relative min-h-[300px] sm:min-h-[360px] lg:min-h-[480px]">
           <img
@@ -600,7 +665,7 @@ function Homeowner() {
 
 function FAQ() {
   const faqs = [
-    ["What does HPP cover?", "HPP covers parts, labor and compressor for qualifying new and used HVAC systems."],
+    ["What does HPP cover?", "HPP covers labor and materials, including compressor coverage, for qualifying new and used HVAC systems."],
     ["Can I offer HPP on every job?", "Most new installs and used systems up to 10 years old are eligible."],
     ["Do you cover older systems?", "Used systems up to 10 years old qualify for coverage."],
     ["How does enrollment work?", "Quote, enroll, and activate from the field or office in a short guided flow."],
@@ -632,7 +697,7 @@ function FAQ() {
                 </span>
               </div>
               {openIdx === i && (
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{a}</p>
+                <p className="mt-3 text-sm font-medium leading-relaxed text-foreground/75">{a}</p>
               )}
             </button>
           ))}
@@ -658,7 +723,7 @@ function FinalCTA() {
           <br />
           <span className="text-gold">Backed by HPP.</span>
         </h2>
-        <p className="mx-auto mt-6 max-w-xl text-base text-white/75 sm:text-lg">
+        <p className="mx-auto mt-6 max-w-xl text-base font-medium text-white/90 sm:text-lg">
           Add revenue to every install and keep customers coming back —
           enroll jobs in minutes from anywhere.
         </p>
@@ -778,10 +843,10 @@ function Landing() {
       <Header />
       <main>
         <Hero />
+        <DifferentiatorCallouts />
         <Benefits />
         <EnrollmentFlow />
         <CoverageBanner />
-        <DifferentiatorCallouts />
         <ContractorNetwork />
         <Homeowner />
         <FAQ />
