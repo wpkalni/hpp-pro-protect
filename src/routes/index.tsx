@@ -647,7 +647,7 @@ function Homeowner() {
 
 function FAQ() {
   const faqs = [
-    ["What does HPP cover?", "HPP covers parts, labor and compressor for qualifying new and used HVAC systems."],
+    ["What does HPP cover?", "HPP covers labor and materials, including compressor coverage, for qualifying new and used HVAC systems."],
     ["Can I offer HPP on every job?", "Most new installs and used systems up to 10 years old are eligible."],
     ["Do you cover older systems?", "Used systems up to 10 years old qualify for coverage."],
     ["How does enrollment work?", "Quote, enroll, and activate from the field or office in a short guided flow."],
