@@ -173,12 +173,16 @@ function Hero() {
             Help Homeowners Say Yes —{" "}
             <span className="text-gold">and Add Revenue</span> to Every Install.
           </h1>
-          <p className="mx-auto mt-6 max-w-xl text-base text-white/75 sm:text-lg lg:mx-0">
+          <div className="mx-auto mt-6 inline-flex w-fit items-center gap-2 rounded-full border-2 border-gold bg-gold/15 px-4 py-2 text-sm font-bold text-gold shadow-lg shadow-gold/10 sm:text-base lg:mx-0">
+            <Award className="h-4 w-4 shrink-0" strokeWidth={2.4} />
+            <span>First in the industry to cover used systems up to 10 years old.</span>
+          </div>
+          <p className="mx-auto mt-6 max-w-xl text-base font-medium text-white/85 sm:text-lg lg:mx-0">
             HPP gives HVAC contractors a simple way to offer protection on new and
             used systems, enroll customers fast, and create long-term retention
             after the install.
           </p>
-          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
+          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start">
             <a
               href="/contractor-signup"
               className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gold px-6 py-3.5 text-base font-semibold text-gold-foreground shadow-lg shadow-gold/20 transition-all hover:brightness-105 sm:w-auto"
@@ -191,6 +195,12 @@ function Hero() {
             >
               Sell a Contract
             </a>
+            <Link
+              to="/file-a-claim"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-white/30 bg-white/5 px-6 py-3.5 text-base font-semibold text-navy-foreground transition-colors hover:bg-white/10 sm:w-auto"
+            >
+              File a Claim
+            </Link>
           </div>
           <div className="mx-auto mt-10 grid w-full max-w-xl grid-cols-1 gap-5 border-t border-white/10 pt-8 sm:grid-cols-3 lg:mx-0">
             {trust.map((t) => (
