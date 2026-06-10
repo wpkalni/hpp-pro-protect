@@ -466,7 +466,7 @@ function PhoneMockup() {
 function CoverageBanner() {
   const items = [
     { icon: Home, t: "New & Used Systems", s: "Coverage up to 10 years old" },
-    { icon: Wrench, t: "Parts & Labor", s: "Including compressor coverage" },
+    { icon: Wrench, t: "Labor + Materials", s: "Including compressor coverage" },
     { icon: ShieldCheck, t: "Flexible Terms", s: "Plans tailored to the job" },
     { icon: TrendingUp, t: "Easy to Attach", s: "Offered at point of sale" },
   ];
