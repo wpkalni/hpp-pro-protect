@@ -618,17 +618,35 @@ function Homeowner() {
             <br />
             Real peace of mind.
           </h2>
-          <p className="mt-5 max-w-md text-muted-foreground">
+          <p className="mt-5 max-w-md font-medium text-foreground/75">
             Whether your system is brand new or has a few years on it, HPP offers
             simple, dependable coverage so you&apos;re never caught off guard by
             an unexpected repair.
           </p>
-          <a
-            href="#"
+          <div className="mt-7 max-w-md rounded-2xl border-l-4 border-gold bg-background p-5 shadow-[var(--shadow-card)]">
+            <div className="flex items-start gap-3">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gold text-gold-foreground">
+                <ShieldCheck className="h-5 w-5" strokeWidth={2.2} />
+              </div>
+              <div>
+                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold">
+                  Limited Warranty Program
+                </p>
+                <p className="mt-1 text-base font-bold text-navy">
+                  Protection Built Into Every New Install.
+                </p>
+                <p className="mt-2 text-sm font-medium leading-relaxed text-foreground/75">
+                  Ask your HPP contractor about our 3-year and 5-year limited warranty plans — coverage that comes standard with your new system installation at no separate cost to you.
+                </p>
+              </div>
+            </div>
+          </div>
+          <Link
+            to="/homeowner-coverage"
             className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-md bg-navy px-6 py-3.5 text-sm font-semibold text-navy-foreground transition-all hover:bg-navy/90 sm:w-fit"
           >
             Learn More for Homeowners <ArrowRight className="h-4 w-4" />
-          </a>
+          </Link>
         </div>
         <div className="relative min-h-[300px] sm:min-h-[360px] lg:min-h-[480px]">
           <img
