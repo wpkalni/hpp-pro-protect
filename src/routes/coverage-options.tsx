@@ -99,7 +99,7 @@ function PlanOptions() {
     },
     {
       icon: ShieldPlus,
-      title: "Standard Labor + Materials Coverage",
+      title: "Standard Labor and Materials Coverage",
       desc: "Provides approved labor reimbursement plus covered repair materials.",
     },
     {
@@ -109,7 +109,7 @@ function PlanOptions() {
     },
     {
       icon: Crown,
-      title: "Premium Labor + Materials Coverage",
+      title: "Premium Labor and Materials Coverage",
       desc: "Comprehensive coverage including approved labor reimbursement and covered repair materials.",
     },
   ];
@@ -194,7 +194,7 @@ function KeyFeatures() {
     },
     {
       icon: PackageCheck,
-      title: "Labor + Materials Options",
+      title: "Labor and Materials Options",
       desc: "Expanded protection that includes covered repair materials.",
     },
     {
@@ -262,7 +262,7 @@ function Comparison() {
             Understand Your Options
           </p>
           <h2 className="text-3xl font-bold text-navy sm:text-4xl lg:text-5xl">
-            Labor Only vs Labor + Materials
+            Labor Only vs Labor and Materials
           </h2>
         </div>
         <div className="mt-12 grid gap-6 sm:mt-16 lg:grid-cols-2 lg:gap-8">
@@ -286,7 +286,7 @@ function Comparison() {
             <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-navy">
               <PackageCheck className="h-6 w-6 text-gold" strokeWidth={2.2} />
             </div>
-            <h3 className="mb-4 text-xl font-bold text-navy">Labor + Materials</h3>
+            <h3 className="mb-4 text-xl font-bold text-navy">Labor and Materials</h3>
             <ul className="space-y-3">
               {laborMaterials.map((item) => (
                 <li key={item} className="flex items-start gap-3">
