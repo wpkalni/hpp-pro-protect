@@ -233,7 +233,7 @@ function Hero() {
               </div>
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wide text-navy">
-                  Labor + Materials Coverage
+                  Labor and Materials Coverage
                 </p>
                 <p className="mt-1 text-sm font-bold text-gold">NEW &amp; USED — UP TO 10 YEARS OLD</p>
               </div>
@@ -466,7 +466,7 @@ function PhoneMockup() {
 function CoverageBanner() {
   const items = [
     { icon: Home, t: "New & Used Systems", s: "Coverage up to 10 years old" },
-    { icon: Wrench, t: "Labor + Materials", s: "Including compressor coverage" },
+    { icon: Wrench, t: "Labor and Materials", s: "Including compressor coverage" },
     { icon: ShieldCheck, t: "Flexible Terms", s: "Plans tailored to the job" },
     { icon: TrendingUp, t: "Easy to Attach", s: "Offered at point of sale" },
   ];

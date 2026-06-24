@@ -11,7 +11,6 @@ import {
   Check,
   Plus,
   Thermometer,
-  Leaf,
   Award,
   HeartHandshake,
   FileCheck2,
@@ -149,108 +148,74 @@ function CoverageOverview() {
   );
 }
 
-function NewSystems() {
-  const bullets = [
-    "Coverage available for newly installed HVAC systems",
-    "Helps manage future repair expenses",
-    "Multiple coverage options available",
-    "Backed by participating HPP contractors",
-  ];
-  return (
-    <section className="bg-navy-soft py-16 sm:py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
-          <div className="order-2 lg:order-1">
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-navy/70">
-              New System Coverage
-            </p>
-            <h2 className="text-3xl font-bold text-navy sm:text-4xl lg:text-5xl">
-              Protection for Newly Installed Systems
-            </h2>
-            <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
-              When you invest in a new HVAC system, protect that investment with
-              coverage that helps manage repair costs down the road. Enroll at
-              the time of installation through your participating contractor.
-            </p>
-            <div className="mt-8 space-y-4">
-              {bullets.map((item) => (
-                <div key={item} className="flex items-start gap-3">
-                  <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-navy">
-                    <Check className="h-3 w-3 text-gold" strokeWidth={3} />
-                  </div>
-                  <span className="text-base text-muted-foreground">{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="order-1 lg:order-2">
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl ring-1 ring-border">
-              <img
-                src={familyImg}
-                alt="Family enjoying a comfortable home with a new HVAC system"
-                className="h-full w-full object-cover"
-                width={1280}
-                height={854}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function UsedSystems() {
-  const items = [
-    {
-      icon: Clock,
-      title: "Systems Up To 10 Years Old",
-      desc: "Protection available for qualifying HVAC systems up to a decade old.",
-    },
-    {
-      icon: Award,
-      title: "A Unique Industry Benefit",
-      desc: "Unlike many competing programs, HPP covers qualifying used systems.",
-    },
-    {
-      icon: ShieldCheck,
-      title: "Extend Confidence",
-      desc: "Helps homeowners feel more secure about older equipment performance.",
-    },
-    {
-      icon: HeartHandshake,
-      title: "Easy Enrollment",
-      desc: "Simple enrollment through participating HPP contractors.",
-    },
-  ];
+function SystemCoverage() {
   return (
     <section className="bg-background py-16 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-gold">
-            Used System Coverage
+            System Coverage
           </p>
           <h2 className="text-3xl font-bold text-navy sm:text-4xl lg:text-5xl">
-            Coverage for Qualifying Systems Up To 10 Years Old
+            Protection for New and Used Systems
           </h2>
           <p className="mt-5 text-base text-muted-foreground sm:text-lg">
-            HPP offers a unique advantage by providing protection for qualifying
-            used systems — a benefit many competing programs do not offer.
+            Whether your HVAC system is newly installed or has been running for years, HPP
+            offers dependable coverage options designed to fit your situation.
           </p>
         </div>
-        <div className="mt-12 grid gap-6 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-          {items.map((it) => (
-            <div
-              key={it.title}
-              className="rounded-2xl border border-border bg-background p-6 text-center shadow-[var(--shadow-card)] transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-elev)]"
-            >
-              <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full ring-1 ring-gold/50">
-                <it.icon className="h-6 w-6 text-gold" strokeWidth={2} />
-              </div>
-              <h3 className="mb-2 text-base font-bold text-navy">{it.title}</h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">{it.desc}</p>
-            </div>
-          ))}
+        <div className="mt-12 grid gap-8 sm:mt-16 lg:grid-cols-2 lg:gap-12">
+          <div className="rounded-2xl border border-border bg-background p-7 shadow-[var(--shadow-card)]">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-navy/70">
+              New Systems
+            </p>
+            <h3 className="text-2xl font-bold text-navy">Newly Installed Systems</h3>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+              When you invest in a new HVAC system, protect that investment with coverage
+              that helps manage repair costs down the road. Enroll at the time of
+              installation through your participating contractor.
+            </p>
+            <ul className="mt-6 space-y-3">
+              {[
+                "Coverage available for newly installed HVAC systems",
+                "Helps manage future repair expenses",
+                "Multiple coverage options available",
+                "Backed by participating HPP contractors",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-navy">
+                    <Check className="h-3 w-3 text-gold" strokeWidth={3} />
+                  </div>
+                  <span className="text-base text-muted-foreground">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-2xl border border-border bg-background p-7 shadow-[var(--shadow-card)]">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-navy/70">
+              Used Systems
+            </p>
+            <h3 className="text-2xl font-bold text-navy">Qualifying Systems Up To 10 Years Old</h3>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+              HPP offers a unique advantage by providing protection for qualifying used
+              systems — a benefit many competing programs do not offer.
+            </p>
+            <ul className="mt-6 space-y-3">
+              {[
+                "Protection available for qualifying HVAC systems up to a decade old",
+                "A unique industry benefit most competitors do not offer",
+                "Helps homeowners feel more secure about older equipment",
+                "Simple enrollment through participating HPP contractors",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-navy">
+                    <Check className="h-3 w-3 text-gold" strokeWidth={3} />
+                  </div>
+                  <span className="text-base text-muted-foreground">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -301,7 +266,7 @@ function PlanOptions() {
             <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-navy">
               <Shield className="h-6 w-6 text-gold" strokeWidth={2.2} />
             </div>
-            <h3 className="mb-4 text-xl font-bold text-navy">Labor + Materials Plans</h3>
+            <h3 className="mb-4 text-xl font-bold text-navy">Labor and Materials Plans</h3>
             <ul className="space-y-3">
               {laborMaterials.map((item) => (
                 <li key={item} className="flex items-start gap-3">
@@ -323,7 +288,7 @@ function WhyHPP() {
   const items = [
     { icon: Home, title: "New & Used Systems", desc: "Coverage for both new installs and qualifying existing systems." },
     { icon: Clock, title: "Up To 10 Years Old", desc: "A unique benefit for older qualifying HVAC equipment." },
-    { icon: Shield, title: "Multiple Options", desc: "Labor-only or labor + materials plans available." },
+    { icon: Shield, title: "Multiple Options", desc: "Labor-only or labor and materials plans available." },
     { icon: FileCheck2, title: "Fast Claims", desc: "Quick, contractor-supported claim handling." },
     { icon: HeartHandshake, title: "Contractor Supported", desc: "Service backed by trained HPP participating contractors." },
     { icon: Thermometer, title: "Simple Enrollment", desc: "Easy sign-up through your contractor at point of sale." },
@@ -370,7 +335,7 @@ function FAQPreview() {
     },
     {
       q: "What coverage options are available?",
-      a: "HPP offers Labor Only and Labor + Materials coverage options. Your contractor can help you choose the plan that fits your needs.",
+      a: "HPP offers Labor Only and Labor and Materials coverage options. Your contractor can help you choose the plan that fits your needs.",
     },
   ];
   const [openIdx, setOpenIdx] = useState<number | null>(0);
@@ -460,8 +425,7 @@ function HomeownerCoveragePage() {
       <main>
         <Hero />
         <CoverageOverview />
-        <NewSystems />
-        <UsedSystems />
+        <SystemCoverage />
         <PlanOptions />
         <WhyHPP />
         <FAQPreview />
